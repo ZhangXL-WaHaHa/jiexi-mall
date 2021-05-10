@@ -1,0 +1,38 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/user/index",
+    "pages/index/gift/index",
+    "pages/index/products/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "backgroundColor": "#f6f0e3",
+    "navigationBarBackgroundColor": "#f6f0e3",
+    "navigationBarTitleText": "",
+    "navigationBarTextStyle": "black",
+    "onReachBottomDistance": 50,
+    "navigationStyle": "default"
+  },
+  "tabBar": {
+    "color": "#6e6d6b",
+    "selectedColor": "#e64340",
+    "borderStyle": "white",
+    "backgroundColor": "#f6f0e3",
+    "list": [
+      {
+        "selectedIconPath": "images/home_page_n.png",
+        "iconPath": "images/home_page_y.png",
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "selectedIconPath": "images/my-n.png",
+        "iconPath": "images/my-y.png",
+        "pagePath": "pages/user/index",
+        "text": "我的"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

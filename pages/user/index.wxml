@@ -1,0 +1,42 @@
+<!-- 上传商品信息到存储库中 -->
+<form catchsubmit="formSubmit">
+  <view class="option-item">
+    <view class='label'>名称</view>
+    <input name="name" value="{{ productInfo.desc }}" class="input" placeholder="输入商品名称" />
+  </view>
+
+  <view class="option-item">
+    <view class='label'>介绍</view>
+    <textarea name="desc" value="{{ productInfo.desc }}" class="input" placeholder="简单介绍该商品" />
+    </view>
+
+  <view class="option-item">
+    <view class='label'>价格</view>
+    <input name="price" value="{{ productInfo.price }}" class="input" placeholder="输入商品的售价"/>
+  </view>
+
+  <view class="option-item">
+    <view class='label'>图片</view>
+    <view class="input">
+      <van-uploader 
+        file-list="{{ fileList }}" max-count="1" deleteable="{{ true }}" bind:after-read="setFileList" bind:delete="deleteImage" />
+    </view>
+  </view>
+
+  <view class="option-item">
+    <view class='label'>类别</view>
+    <view class="input" direction="horizontal">
+      <van-radio-group value="{{ productInfo.type }}" bind:change="changeProductType">
+        <van-radio name="product" icon-size="16px">主营商品</van-radio>
+        <van-radio name="gift" icon-size="16px">礼盒定制</van-radio>
+      </van-radio-group>
+    </view>
+  </view>
+
+  <view class="option-item">
+    <view class="label">序号</view>
+    <input name="number" value="{{ productInfo.number}}" class="input" type="number" placeholder="序号从小到大排列展示商品" />
+  </view>
+
+  <button type="primary" round class="btn" formType="submit">提交发布</button>
+</form>

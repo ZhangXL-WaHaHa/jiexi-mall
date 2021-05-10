@@ -1,0 +1,86 @@
+<view class="page bg-color">
+	<view class="page__bd">
+
+		<view class="swiper-container">
+			<swiper class="swiper_box" autoplay="true" bindchange="swiperchange" current="{{swiperCurrent}}">
+				<block wx:for="{{bannerList}}" wx:key="*this">
+					<swiper-item>
+						<image bindtap="tapBanner" data-id="{{item.businessId}}" src="{{item.picUrl}}" />
+					</swiper-item>
+				</block>
+			</swiper>
+			<view class="dots">
+				<block wx:for="{{bannerList}}" wx:key="*this">
+					<view class="dot{{index == swiperCurrent ? ' active' : ''}}"></view>
+				</block>
+			</view>
+		</view>
+
+		<block wx:for="{{shopSubList}}">
+			<view class="weui-cells__title">{{item.name}}</view>
+			<view class="weui-cells weui-cells_after-title">
+				<view class="weui-cell weui-cell_access" data-id="{{item.id}}" bindtap='goMap'>
+					<view class="weui-cell__hd">
+						<image src="/images/location.png"></image>
+					</view>
+					<view class="weui-cell__bd">{{ item.address }}</view>
+					<!-- <view class="weui-cell__ft weui-cell__ft_in-access">地图</view> -->
+				</view>
+				<view class="weui-cell">
+					<view class="weui-cell__hd">
+						<image src="/images/icon-service.png"></image>
+					</view>
+					<view class="weui-cell__bd">服务</view>
+					<view class="weui-cell__ft" style="width: 500rpx;line-height: 16px;">
+						<text>{{item.services}}</text>
+					</view>
+				</view>
+				<view class="weui-cell">
+					<view class="weui-cell__hd">
+						<image src="/images/time.png"></image>
+					</view>
+					<view class="weui-cell__bd">营业时间</view>
+					<view class="weui-cell__ft">{{ item.openingHours }}</view>
+				</view>
+				<button class="we-btn weui-cell border-btn" open-type="contact">
+					<view class="weui-cell__hd">
+						<image src="/images/icon-comment.png"></image>
+					</view>
+					<view class="weui-cell__bd">微信咨询</view>
+					<view class="weui-cell__ft weui-cell__ft_in-access"></view>
+				</button>
+				<view class="weui-cell">
+					<view class="weui-cell__hd">
+						<image src="/images/tel.png"></image>
+					</view>
+					<view class="weui-cell__bd">联系电话</view>
+					<view class="weui-cell__ft">
+						<text class="phone-blue" data-tel="{{item.linkPhone}}" bindtap='callPhone'>{{ item.linkPhone }}</text>
+						<text> (黄女士)</text>
+						<view style="margin-top: 10rpx">
+							<text class="phone-blue" bindtap='callPhone' data-tel="{{item.manPhone}}">{{item.manPhone}}</text>
+							<text> (张先生)</text>
+						</view>
+					</view>
+				</view>
+			</view>
+		</block>
+		
+		<!-- 主营产品大图 -->
+		<view bindtap="viewProduct">
+			<view class='recommend-title'>主营产品</view>
+			<view style="padding : 30rpx;">
+				<image src="/images/food_list/icon-product.jpg" class="item-image"></image>
+			</view>
+		</view>
+		
+		<!-- 礼盒定制大图 -->
+		<view bindtap="viewGift">
+			<view class='recommend-title'>礼盒定制</view>
+			<view style="padding: 30rpx;">
+				<image src="/images/food_list/icon-gift.jpg" class="item-image"></image>
+			</view>
+		</view>
+	</view>
+	<view class='page__ft'></view>
+</view>

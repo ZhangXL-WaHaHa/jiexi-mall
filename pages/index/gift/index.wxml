@@ -1,0 +1,11 @@
+<!--pages/index/gift/index.wxml-->
+<!-- <view class='recommend-title'>礼盒定制</view> -->
+<view class="goods-container" wx:if="{{giftBoxList.length > 0}}">
+	<view class="goods-box" wx:for-items="{{giftBoxList}}" wx:key="*this" bindtap="toDetailsTap" data-id="{{item.id}}">
+		<view class="img-box">
+			<image src="{{ item.url[0].url }}" class="image" mode="aspectFill" lazy-load="true" />
+		</view>
+		<view class="goods-title">{{item.name}}</view>
+		<view class="goods-price">¥ {{item.price}}</view>
+	</view>
+</view>

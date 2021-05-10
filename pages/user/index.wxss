@@ -1,0 +1,29 @@
+/* pages/user/index.wxss */
+.option-item {
+  display: flex;
+  padding: 20rpx 30rpx;
+  border-bottom: 1px solid #eee;
+
+  font-size: 14px;
+  color: #323233;
+}
+.option-item .label {
+  width: 200rpx;
+}
+.option-item .input {
+  width: 440rpx;
+  margin-left: 50rpx;
+}
+
+.radio {
+  font-size: 30rpx;
+}
+
+.btn {
+  width: 400rpx;
+  display: block;
+  margin: 0 auto;
+  margin-top: 80rpx;
+
+  border-radius: 50rpx;
+}

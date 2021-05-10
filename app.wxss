@@ -1,0 +1,24 @@
+/**app.wxss**/
+@import "/lib/weui.wxss";
+.container {
+  height: 100%;
+} 
+image{
+  width: 100%;
+}
+
+.flex-1 {
+  flex: 1
+}
+
+.fz-14 {
+  font-size: 14px;
+}
+
+.aic {
+  align-items: center;
+}
+
+.ml-10 {
+  margin-left: 20rpx;
+}
